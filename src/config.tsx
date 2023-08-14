@@ -1,4 +1,4 @@
-const Cities = [
+const CitiesConfig = [
    {
       name: "London",
       lat: "51.509865",
@@ -6,8 +6,8 @@ const Cities = [
    },
    {
       name: "Berlin",
-      lat: "52.520008",
-      lon: "13.404954",
+      lat: "52.52437",
+      lon: "13.41053",
    },
    {
       name: "Paris",
@@ -16,13 +16,14 @@ const Cities = [
    },
    {
       name: "Tokyo",
-      lat: "139.839478",
-      lon: "-0.118092",
+      lat: "35.6895",
+      lon: "139.69171",  
    },
    {
       name: "NewYork",
-      lat: "40.730610",
-      lon: "-73.935242",
+      lat: "40.7166638",
+      lon: "-74.0",
    },
+];
 
-]
+export default CitiesConfig

@@ -1,5 +1,7 @@
+import { GetWeatherData } from "./GetWeatherData";
+
 export type InitialState = {
-   data: {};
+   data: GetWeatherData | undefined;
    loading: boolean;
    error: string | undefined;
 }

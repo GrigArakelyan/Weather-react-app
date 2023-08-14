@@ -1,17 +1,14 @@
-// export type Weather = {
-//    description: string;
-//    icon: string;
-//    id: number;
-//    main: string;
-// }
 
-export type GetWeatherData = {
+export interface GetWeatherData {
    base: string;
-   clouds: {
-
+   clouds:{
+      all: number;
    };
    cod: number;
-   coord: {all: number};
+   coord: {
+      lon: number;
+      lat: number;
+   };
    dt: number;
    id: number;
    main:{

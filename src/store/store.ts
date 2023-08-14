@@ -1,18 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import LondonSlice from "./slices/LondonSlice/LondonSlice";
-import TokyoSlice from "./slices/Tokyo/TokyoSlice";
-import NewYorkSlice from "./slices/NewYork/NewYorkSlice";
-import ParisSlice from "./slices/Paris/ParisSlice";
-import BerlinSlice from "./slices/Berlin/BerlinSlice";
+import CitiesSlice from "./slices/CitiesSlice";
 
 
 const store = configureStore({
   reducer: {
-    London: LondonSlice,
-    Tokyo: TokyoSlice,
-    Berlin: BerlinSlice,
-    Paris: ParisSlice,
-    NewYork: NewYorkSlice,
+    Cities : CitiesSlice,
   },
 });
 
