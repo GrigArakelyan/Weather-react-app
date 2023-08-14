@@ -7,13 +7,6 @@ import { useAppDispatch } from "../../hook/useAppDispatch";
 import { addCityData } from "../../store/slices/CitiesSlice";
 import { useSelector } from "react-redux";
 import { selectCityWeatherData } from "../../store/selectores/CitiesSelector";
-// import { GetWeatherData } from "../../types/GetWeatherData";
-
-// type DataType = {
-//    data:GetWeatherData | object;
-//    loading: boolean;
-//    error: string;
-// }
 
 const Cities:FC = () => {
 
@@ -40,7 +33,7 @@ const Cities:FC = () => {
    console.log(data, "data")
 
    return (
-      <div className="cities_Weather">
+      <div key={data?.id} className="cities_Weather">
          <h2 className="h2_title">{data?.name}</h2>
       </div>
    )

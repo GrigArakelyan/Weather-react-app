@@ -6,8 +6,8 @@ const CitiesConfig = [
    },
    {
       name: "Berlin",
-      lat: "52.52437",
-      lon: "13.41053",
+      lat: "52.52001",
+      lon: "13.40495",
    },
    {
       name: "Paris",
