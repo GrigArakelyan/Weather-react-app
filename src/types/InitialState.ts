@@ -1,6 +1,6 @@
 import { GetWeatherData } from "./GetWeatherData";
 
-export type InitialState = {
+export interface InitialState  {
    data: GetWeatherData | undefined;
    loading: boolean;
    error: string | undefined;

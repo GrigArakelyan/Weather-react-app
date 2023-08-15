@@ -3,7 +3,8 @@ import { getRefreshToken, getToken, setRefreshToken, setToken } from "../service
 
 const instance:AxiosInstance = axios.create({
   // baseURL: process.env.BASE_URL,
-  baseURL:"https://api.openweathermap.org/data/2.5/",
+  // baseURL:"https://api.openweathermap.org/data/2.5/",
+  baseURL: "https://api.openweathermap.org/data/2.5/",
   headers: {
     "Content-Type": "application/json",
   },

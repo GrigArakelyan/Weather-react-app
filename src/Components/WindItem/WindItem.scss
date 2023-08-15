@@ -1,0 +1,31 @@
+.wind_item{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 45%;
+   height: 60px;
+   margin: 5px 15px;
+   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+   border-radius: 10px;
+   padding: 3px 10px;
+   .wind{
+      display: flex;
+      align-items: center;
+      .icon_div{
+         width: 30px;
+         .icon{
+            width: 30px;
+         }
+      }
+      .subtitle{
+         margin-left: 10px;
+      }
+   }
+   .wind_speed_div{
+      display: flex;
+      .wind_speed{
+         font-size: 16px;
+         margin: 0 10px;
+      }
+   }
+}
