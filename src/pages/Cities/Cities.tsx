@@ -8,9 +8,9 @@ import { addCityData } from "../../store/slices/CitiesSlice";
 import { useSelector } from "react-redux";
 import { selectCityWeatherData } from "../../store/selectores/CitiesSelector";
 import MainWeather from "../../Components/MainWeather/Index";
-import DaysWeather from "../../Components/DaysWeather";
+import HourlyForecast from "../../Components/HourlyForecast";
 import DailyForecast from "../../Components/DailyForecast";
-import axios from "axios";
+import DaysWeather from "../../Components/DaysWeather";
 
 const Cities:FC = () => {
 
@@ -33,14 +33,42 @@ const Cities:FC = () => {
       })
    }, [name]);
 
-   console.log(data, "data")
+   
+   const addZero = (i: any) => {
+      if (i < 10) {
+         i = "0" + i
+      }
+      return i;
+   }
+
+   const dateNow = addZero(new Date().getHours()) + ":" + addZero(new Date().getMinutes());
+   const dayData = data?.list.filter((dayData) => {
+      const today = new Date().getDay()
+      if(today === new Date(dayData.dt_txt).getDay()){
+         return dayData
+      }
+   })
+
+   // console.log(dayData, "dayData") ////console.log
+   console.log(data, "data") //////// console.log
 
    return (
       <div key={data?.city.id} className="cities_Weather">
          <h2 className="h2_title">{data?.city.name}</h2>
-         <MainWeather data={data}/>
-         <DaysWeather data={data} />
-         {/* <DailyForecast data={data}/> */}
+         <MainWeather 
+            data={data}
+            dateNow={dateNow}
+         />
+         <HourlyForecast 
+            data={data} 
+            dayData={dayData} 
+            addZero={addZero}
+         />
+         <DailyForecast 
+            data={data} 
+            addZero={addZero}
+            />
+         <DaysWeather data={data}/>
       </div>
    )
 }

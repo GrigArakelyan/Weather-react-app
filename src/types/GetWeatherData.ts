@@ -47,48 +47,53 @@ export interface GetWeatherData {
    }[]
 }
 
-export type PropsData = {
-   data: GetWeatherData | undefined
+export interface PropsData {
+   data: GetWeatherData | undefined;
+   dayData?: DayWeatherData[] | undefined;
+   dateNow?: string;
+   // addZero?: (i: number) => string;
+   addZero?: any;
 }
 
 
+export interface DayWeatherData{
+   clouds: {
+      all: number
+   };
+   dt: number;
+   dt_txt: Date;
+   main:{
+      feels_like: number;
+      grnd_level: number;
+      humidity: number;
+      pressure: number;
+      sea_level: number;
+      temp: number;
+      temp_kf: number;
+      temp_max: number;
+      temp_min: number;
+   }
+   pop: number;
+   sys: {pod: string}
+   visibility: number;
+   weather: {
+      id: number;
+      main: string;
+      description: string;
+      icon: string;
+   }[];
+   wind:{
+      speed: number;
+      deg: number;
+      gust: number;
+   }
+};
 
-// base: string;
-//    clouds:{
-//       all: number;
-//    };
-//    cod: number;
-//    coord: {
-//       lon: number;
-//       lat: number;
-//    };
-//    dt: number;
-//    id: number;
-//    main:{
-//       temp: number;
-//       feels_like: number;
-//       humidity: number;
-//       pressure: number;
-//       temp_max: number;
-//       temp_min: number;
-//    };
-//    name: string;
-//    sys: {
-//       country: string;
-//       id: number;
-//       sunrise: number;
-//       sunset: number;
-//       type: number;
-//    };
-//    timezone: number;
-//    visibility: number;
-//    weather:{
-//       description: string;
-//       icon: string;
-//       id: number;
-//       main: string;
-//    }[];
-//    wind: {
-//       speed: number;
-//       deg: number;
-//    }
+export type DaysTypeArray = {
+   day1: DayWeatherData[];
+   day2: DayWeatherData[];
+   day3: DayWeatherData[];
+   day4: DayWeatherData[];
+   day5: DayWeatherData[];
+   day6: DayWeatherData[];
+}
