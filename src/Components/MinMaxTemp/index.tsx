@@ -1,7 +1,6 @@
 import React, { FC } from "react"
 import { PropsData } from "../../types/GetWeatherData"
-import { ReactComponent as Temp } from "../../img/icons/highTemperature.svg"
-import "./MinMaxTemp.scss"
+import  Temp  from "../../img/icons/highTemperature.svg"
 
 const MinMaxTemp:FC<PropsData> = ({data}) => {
 
@@ -9,7 +8,7 @@ const MinMaxTemp:FC<PropsData> = ({data}) => {
       <div className="weather_item">
       <div className="temp_max_min">
          <div className="icon_div">
-            <Temp className="icon"/>
+            <img className="icon" src={Temp}/>
          </div>
          <div className="subtitle">Min. / Max.</div>
       </div>

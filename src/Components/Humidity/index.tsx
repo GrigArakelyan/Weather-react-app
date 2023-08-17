@@ -1,6 +1,6 @@
 import React, {FC} from "react"
 import { PropsData } from "../../types/GetWeatherData"
-import { ReactComponent as Temp } from "../../img/icons/sunset.svg"
+import HumidityIcon  from "../../img/icons/wet.svg"
 
 
 const Humidity:FC<PropsData> = ({data}) => {
@@ -10,7 +10,7 @@ const Humidity:FC<PropsData> = ({data}) => {
       <div className="wind_item">
          <div className="wind">
             <div className="icon_div">
-                  <Temp className="icon"/>
+               <img className="icon" src={HumidityIcon}/>
             </div>
             <p className="subtitle">Humidity</p>
          </div>

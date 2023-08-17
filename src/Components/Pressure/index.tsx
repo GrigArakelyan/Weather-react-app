@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import { ReactComponent as Temp } from "../../img/icons/highTemperature.svg"
+import  PressureIcon  from "../../img/icons/fog.svg"
 import { PropsData } from "../../types/GetWeatherData"
 
 const Pressure:FC<PropsData> = ({data}) => {
@@ -8,9 +8,9 @@ const Pressure:FC<PropsData> = ({data}) => {
       <div className="wind_item">
          <div className="wind">
             <div className="icon_div">
-                  <Temp className="icon"/>
+               <img className="icon" src={PressureIcon} />
             </div>
-            <p className="subtitle">Wind</p>
+            <p className="subtitle">Pressure</p>
          </div>
          <div className="wind_speed_div">
             <div className="wind_speed">

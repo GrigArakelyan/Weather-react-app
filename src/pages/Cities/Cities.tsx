@@ -50,6 +50,7 @@ const Cities:FC = () => {
    })
 
    console.log(data, "data") //////// console.log
+   console.log(data?.list[0].weather[0].icon, "icon")
 
    return (
       <div key={data?.city.id} className="cities_Weather">

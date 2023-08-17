@@ -1,10 +1,13 @@
 import React, { FC } from "react"
 import "./MainWeather.scss"
 import { PropsData } from "../../types/GetWeatherData"
-import { ReactComponent as Icon } from "../../img/icons/cloud.svg"
+import Rain from "../../img/icons/Rain.svg";
+// import { ReactComponent as Icon } from `../../img/icons/${data?.list[0].weather[0].main}.svg`
 
 
 const MainWeather:FC<PropsData> = ({data, dateNow}) => {
+
+// import  Icon from `../../img/icons/${data?.list[0].weather[0].main}.svg`
 
 
    return(
@@ -41,7 +44,9 @@ const MainWeather:FC<PropsData> = ({data, dateNow}) => {
                </div>
             </div>
          <div className="weathet_icon">
-            <Icon className="icon"/>
+            {/* <img src={`../../img/icons/${data?.list[0].weather[0].main}.svg`} /> */}
+            <img className="icon" src={Rain}/>
+            {/* <Icon className="icon"/> */}
          </div>
          </div> 
       </div>
