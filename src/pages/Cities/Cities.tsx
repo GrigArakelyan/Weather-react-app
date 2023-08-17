@@ -49,7 +49,6 @@ const Cities:FC = () => {
       }
    })
 
-   // console.log(dayData, "dayData") ////console.log
    console.log(data, "data") //////// console.log
 
    return (

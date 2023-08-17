@@ -1,7 +1,8 @@
 import React, { FC } from "react"
 import "./DaysWeather.scss"
 import { ReactComponent as Logo } from "../../img/icons/bizzard.svg";
-import { DaysTypeArray, PropsData } from "../../types/GetWeatherData";
+import { DayWeatherData, DaysTypeArray, PropsData } from "../../types/GetWeatherData";
+import { keys } from "@mui/system";
 
 
 const DaysWeather:FC<PropsData> = ({data}) => {
@@ -14,20 +15,31 @@ const DaysWeather:FC<PropsData> = ({data}) => {
       day3:[],
       day4:[],
       day5:[],
-      day6:[],
    }
-   
 
+   // const averageWeather = (arr: DayWeatherData[]) => {
+   //    let result = 0;
+   //    arr.map((elem) => {
+   //       console.log(elem)
+   //       const temp = Math.floor(elem.main.temp -273.15);
+   //       console.log(temp, "temp")
+   //       result = (result + temp) / arr.length
+   //       console.log(result, "result")
+   //    })
+
+   // }
+   // averageWeather(days.day1)
+   
    const day1 = new Date(); day1.setDate(day1.getDate() + 1);
    const day2 = new Date(); day2.setDate(day2.getDate() + 2);
    const day3 = new Date(); day3.setDate(day3.getDate() + 3);
    const day4 = new Date(); day4.setDate(day4.getDate() + 4);
    const day5 = new Date(); day5.setDate(day5.getDate() + 5);
-   const day6 = new Date(); day6.setDate(day6.getDate() + 6);
 
 
-   data?.list.filter((elem) => {
+   data?.list.filter((elem:DayWeatherData) => {
       if(new Date(elem.dt_txt).toDateString() === new Date().toDateString()){
+         // const sdf:any = [...sdf, {...elem}]
          days.day1 = [...days.day1, elem];
       }
       if(new Date(elem.dt_txt).toDateString() === day1.toDateString()){
@@ -42,12 +54,9 @@ const DaysWeather:FC<PropsData> = ({data}) => {
       if(new Date(elem.dt_txt).toDateString() === day4.toDateString()){
          days.day5 = [...days.day5, elem];
       }
-      if(new Date(elem.dt_txt).toDateString() === day5.toDateString()){
-         days.day6 = [...days.day6, elem];
-      }
    })    
       
-   console.log(days, "odjihadosuf");
+   // console.log(DaysWeather, "odjihadosuf");
    
 
    return (

@@ -56,7 +56,7 @@ export interface PropsData {
 }
 
 
-export interface DayWeatherData{
+export interface DayWeatherData {
    clouds: {
       all: number
    };
@@ -95,5 +95,6 @@ export type DaysTypeArray = {
    day3: DayWeatherData[];
    day4: DayWeatherData[];
    day5: DayWeatherData[];
-   day6: DayWeatherData[];
 }
+
+// export type DaysTypeArray = Array<DayWeatherData[]>
