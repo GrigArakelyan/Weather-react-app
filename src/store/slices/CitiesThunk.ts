@@ -8,7 +8,7 @@ export const fetchCities = createAsyncThunk<GetWeatherData,CityConfigType,{rejec
   "Cities/fetchCities",
   async (city, { rejectWithValue }) => {
     return getCitiesData(city.lat, city.lon, city.API)
-      .then(({data}) => data)
+      .then(({data}) => data )
       .catch((error) => rejectWithValue(error.message));
   }
 );

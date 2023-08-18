@@ -48,10 +48,9 @@ export interface GetWeatherData {
 }
 
 export interface PropsData {
-   data: GetWeatherData | undefined;
-   dayData?: DayWeatherData[] | undefined;
+   data: GetWeatherData;
+   dayData?: DayWeatherData[];
    dateNow?: string;
-   // addZero?: (i: number) => string;
    addZero?: any;
 }
 
