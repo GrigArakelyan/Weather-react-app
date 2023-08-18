@@ -6,7 +6,7 @@ const CitiesSlice = createSlice({
    name: "Cities",
    initialState:CitiesInitialState,
    reducers:{
-      addCityData: (state, {payload}) => {
+      clearCitiesData: (state, {payload}) => {
          state.data = payload
       }
    },
@@ -20,7 +20,6 @@ const CitiesSlice = createSlice({
          state.loading = false;
          state.error = "";
          state.data = payload;
-         console.log(state.data, "state.data")
       })
       .addCase(fetchCities.rejected, (state, {payload}) => {
          state.loading = false;
@@ -30,4 +29,4 @@ const CitiesSlice = createSlice({
 });
 
 export default CitiesSlice.reducer
-export const { addCityData } = CitiesSlice.actions
+export const { clearCitiesData } = CitiesSlice.actions

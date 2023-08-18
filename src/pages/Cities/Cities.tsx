@@ -1,11 +1,9 @@
-// import  Axios  from "../../lib/instance";
 import  "./Cities.scss"
 import React, {FC, useEffect} from "react"
 import { useParams } from "react-router"
 import  CitiesConfig  from "../../config";
 import { useAppDispatch } from "../../hook/useAppDispatch";
-import { addCityData } from "../../store/slices/CitiesSlice";
-// import { useSelector } from "react-redux";
+import { clearCitiesData } from "../../store/slices/CitiesSlice";
 import { selectCityWeatherData } from "../../store/selectores/CitiesSelector";
 import MainWeather from "../../Components/MainWeather/Index";
 import HourlyForecast from "../../Components/HourlyForecast";
@@ -18,6 +16,7 @@ import { useAppSelector } from "../../hook/useAppSelector";
 import { InitialStateData } from "../../store/slices/InitialState";
 
 const Cities:FC = () => {
+   const {data, loading, error} = useAppSelector(selectCityWeatherData);
    const {name} = useParams();
    const dispatch = useAppDispatch();
 
@@ -28,20 +27,11 @@ const Cities:FC = () => {
          }
       })
       return () => {
-         dispatch(addCityData(InitialStateData))
+         dispatch(clearCitiesData(InitialStateData))
          }
    }, [name]);
    
-   const {data, loading, error} = useAppSelector(selectCityWeatherData);
-
    const dateNow = addZero(new Date().getHours()) + ":" + addZero(new Date().getMinutes());
-
-   const dayData = data?.list.filter((dayData) => {
-      const today = new Date().getDay()
-      if(today === new Date(dayData.dt_txt).getDay()){
-         return dayData
-      }
-   })
 
    console.log(data, "data") //////// console.log
 
@@ -50,21 +40,20 @@ const Cities:FC = () => {
          <h2 className="h2_title">{data?.city.name}</h2>
          {loading ? <Loading /> :
          error ?  
-            <div>{error}</div>  : 
+            <div className="req_error_div">
+               <p className="req_error">{`Error ! ${error}`}</p>
+            </div>  : 
          <> 
             <MainWeather 
                data={data}
                dateNow={dateNow}/>
             <HourlyForecast 
-               data={data} 
-               dayData={dayData}
-               />
+               data={data}/>
             <DailyForecast 
                data={data}/>
-            <DaysWeather data={data}/>
+            <DaysWeather 
+               data={data}/>
          </>}
-         
-         
       </div>
    )
 }

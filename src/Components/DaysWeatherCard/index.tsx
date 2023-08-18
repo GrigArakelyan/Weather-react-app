@@ -1,8 +1,9 @@
 import React, { FC } from "react"
 import { PropsData } from "../../types/GetWeatherData"
 import { ReactComponent as Sun } from "../../img/icons/suny.svg";
+import { addZero } from "../../helpers/functions";
 
-const DaysWeatherCard:FC<PropsData> = ({data, addZero}) => {
+const DaysWeatherCard:FC<PropsData> = ({data}) => {
 
    const timezon = data&& data?.city.timezone / 3600;
 const msToTime = (duration: number | undefined) => {

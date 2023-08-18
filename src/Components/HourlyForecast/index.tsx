@@ -17,7 +17,7 @@ const HourlyForecast:FC<PropsData> = ({data}) => {
             <h4 className="h4_title">Weather for today</h4>
          </div>
          <div className="days_weather_card">
-            <DaysWeatherCard data={data} addZero={addZero}/>
+            <DaysWeatherCard data={data}/>
          </div>
          <div className="weather_items">
             <MinMaxTemp data={data} />

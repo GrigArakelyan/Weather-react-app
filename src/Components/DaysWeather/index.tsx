@@ -19,8 +19,7 @@ const DaysWeather:FC<PropsData> = ({data}) => {
    const day4:Array<DayWeatherData> = [];
    const day5:Array<DayWeatherData> = [];
 
-   
-   data?.list.find((elem:DayWeatherData) => {
+   data?.list.forEach((elem:DayWeatherData) => {
       if(new Date(elem.dt_txt).toDateString() === new Date().toDateString()){
          day1.push(elem);
       }
@@ -36,7 +35,7 @@ const DaysWeather:FC<PropsData> = ({data}) => {
       if(new Date(elem.dt_txt).toDateString() === day4Date.toDateString()){
          day5.push(elem)
       }
-   })    
+   }) 
 
    return (
       <div  className="DailyForecast">
