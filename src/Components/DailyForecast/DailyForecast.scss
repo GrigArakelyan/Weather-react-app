@@ -12,20 +12,28 @@
       margin-left: 5px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      .arrow_div{
+         margin: 0 5px;
+         .arrow_icon{
+            width: 25px;
+            padding: 5px;
+         }
+      }
       .day_card{
          display: flex;
          flex-direction: column;
          align-items: center;
          margin: 15px 15px 30px 15px;
-         // border: 1px solid;
          width: 17%;
          border-radius: 10px;
          box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
          .day{
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: black;
-            font-size: 20px;
-            margin: 10px 0;
+            font-size: 17px;
+            margin: 10px 5px;
+            padding: 5px;
             font-weight: 500;
          }
          .day_time{

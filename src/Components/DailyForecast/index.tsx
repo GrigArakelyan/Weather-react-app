@@ -1,25 +1,47 @@
-import React, {FC} from "react";
+import React, {FC, useState} from "react";
 import "./DailyForecast.scss"
-import { PropsData } from "../../types/GetWeatherData";
-import { ReactComponent as Logo } from "../../img/icons/bizzard.svg";
+import { GetWeatherData, PropsData } from "../../types/GetWeatherData";
+import ArrowLeftIcon  from "../../img/arrowLeftIcon.png";
+import ArrowRightIcon  from "../../img/arrowRightIcon.png";
 import { addZero } from "../../helpers/functions";
 
 const DailyForecast:FC<PropsData> = ({data}) => {
 
-   const daysData = data?.list.slice(0, 5);
+   const [sliceN, setSliceN] = useState(0);
+   const [sliceM, setSliceM] = useState(5);
+   const [daysData, setDaysData] = useState(data?.list.slice(sliceN, sliceM))
+
+   const right = () => {
+      if(data && sliceN <= data.list.length - 5 && sliceM <= data.list.length){
+         setSliceN(sliceN + 5);
+         setSliceM(sliceM + 5);
+         setDaysData(data?.list.slice(sliceN, sliceM))
+      } 
+   }
+   const left = () => {
+      if(data && sliceN >= 0 && sliceM >= 5){
+         setSliceN(sliceN - 5);
+         setSliceM(sliceM - 5);
+         setDaysData(data?.list.slice(sliceN, sliceM))
+      } 
+   }
  
    return (
       <div key={data?.city.id} className="DailyForecast">
          <h3 className="h3_title">Hourly Forecast</h3>
          <div className="days_card">
+            <div className="arrow_div"
+               onClick={left}
+            >
+               <img className="arrow_icon" src={ArrowLeftIcon} />
+            </div>
             {daysData?.map((day, index) => 
                <div key={index} className="day_card">
                <div className="day">
-                  {new Date().getDay() === new Date(day.dt_txt).getDay()? "Today" : "Tomorrow"}
+                  {new Date(day.dt_txt).toDateString()}
                </div>
                <div className="day_time">
-                  {index === 0 ? addZero(new Date().getHours())+ ":" + addZero(new Date().getMinutes()) :
-                  addZero(new Date(day.dt_txt).getHours()) + ":" + addZero(new Date(day.dt_txt).getMinutes())}
+                  {addZero(new Date(day.dt_txt).getHours()) + ":" + addZero(new Date(day.dt_txt).getMinutes())}
                </div>
                <div className="temperature">
                   <p className="temp">
@@ -36,6 +58,11 @@ const DailyForecast:FC<PropsData> = ({data}) => {
                </div>
             </div>
             )}
+            <div className="arrow_div"
+               onClick={right}
+            >
+               <img className="arrow_icon" src={ArrowRightIcon} />
+            </div>
          </div>
       </div>
    )

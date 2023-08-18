@@ -50,7 +50,7 @@ const Cities:FC = () => {
       <div key={data?.city.id} className="cities_Weather">
          <h2 className="h2_title">{data?.city.name}</h2>
          {/* {data?.message ?  */}
-            {/* <div>Request failed with status</div>  :  */}
+            {/* <div>{error.message}</div>  :  */}
             {loading ? <Loading /> :
          <>
             <MainWeather 

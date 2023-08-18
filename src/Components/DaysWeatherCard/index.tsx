@@ -1,5 +1,6 @@
 import React, { FC } from "react"
 import { PropsData } from "../../types/GetWeatherData"
+import { ReactComponent as Sun } from "../../img/icons/suny.svg";
 
 const DaysWeatherCard:FC<PropsData> = ({data, addZero}) => {
 
@@ -26,7 +27,7 @@ const msToTime = (duration: number | undefined) => {
             </div>
          <div className="sunset_div_Img">
             <div className="sunSet_img">
-            <img className="icon" src={`https://openweathermap.org/img/wn/${data?.list[0].weather[0].icon}@2x.png`}/>
+            <Sun className="icon" />
             </div>
             <div className="sunset_div">
                <div className="sunrise">
