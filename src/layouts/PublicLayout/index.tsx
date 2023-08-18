@@ -15,7 +15,7 @@ const PublicLayout:FC = () => {
             <div className="cities_div">
                <div className="cities">
                   {cities.map((city, Index) => (
-                     <NavLink key={Index} to={`/${city}`} className={classActive}>
+                     <NavLink key={Index} to={`/${city.toLowerCase()}`} className={classActive}>
                         <h4>{city}</h4>
                      </NavLink>
                   ))}

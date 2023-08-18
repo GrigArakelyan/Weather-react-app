@@ -14,16 +14,23 @@ import Loading from "../../GlobalComponents/Loading/Loading";
 import { fetchCities } from "../../store/slices/CitiesThunk";
 import { useAppSelector } from "../../hook/useAppSelector";
 import { InitialStateData } from "../../store/slices/InitialState";
+import { useSearchParams } from "react-router-dom";
 
 const Cities:FC = () => {
    const {data, loading, error} = useAppSelector(selectCityWeatherData);
+   const [searchparams, setSearchParams] = useSearchParams()
    const {name} = useParams();
    const dispatch = useAppDispatch();
 
+   // const latQuary = searchparams.get("lat") || "";
+   // const lonQuary = searchparams.get("lon") || "";
+
    useEffect(() => {
       CitiesConfig.filter((city) => {
-         if(city.name === name){
+         console.log((name)?.toLowerCase())
+         if((city.name).toLowerCase() === (name)?.toLowerCase()){
             dispatch(fetchCities(city))
+            setSearchParams({name: city.name, lat: city.lat, lon: city.lon})
          }
       })
       return () => {
