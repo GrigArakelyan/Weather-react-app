@@ -15,7 +15,7 @@ const MinMaxTemp:FC<PropsData> = ({data}) => {
       <div className="temp">
          <div className="temp_min_max">
             <p className="temperature">
-               {data?.list[0].main.temp_min && Math.floor(data?.list[0].main.temp_min - 273.15)}
+               {data?.list[0].main.temp_min && Math.ceil(data?.list[0].main.temp_min - 273.15)}
             </p>
             <p className="temper_o">o</p>
          </div>

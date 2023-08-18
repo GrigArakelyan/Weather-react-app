@@ -6,8 +6,9 @@ import MinMaxTemp from "../MinMaxTemp"
 import Humidity from "../Humidity"
 import Pressure from "../Pressure"
 import DaysWeatherCard from "../DaysWeatherCard"
+import { addZero } from "../../helpers/functions"
 
-const HourlyForecast:FC<PropsData> = ({data, addZero}) => {
+const HourlyForecast:FC<PropsData> = ({data}) => {
 
 
    return (

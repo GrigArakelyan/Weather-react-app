@@ -1,12 +1,11 @@
 import React, { FC } from "react"
 import { PropsData } from "../../types/GetWeatherData"
-import { ReactComponent as Sunset } from "../../img/icons/sunset.svg"
 
 const DaysWeatherCard:FC<PropsData> = ({data, addZero}) => {
 
    const timezon = data&& data?.city.timezone / 3600;
 const msToTime = (duration: number | undefined) => {
-   if(duration != undefined && timezon){
+   if(duration && timezon){
       let minutes = Math.floor((duration / (1000 / 60)) % 60),
          hours = Math.floor((duration / (1000 / 60 / 60)) % 24);
       return addZero(hours) + ":" + addZero(minutes);
@@ -27,7 +26,7 @@ const msToTime = (duration: number | undefined) => {
             </div>
          <div className="sunset_div_Img">
             <div className="sunSet_img">
-               <Sunset />
+            <img className="icon" src={`https://openweathermap.org/img/wn/${data?.list[0].weather[0].icon}@2x.png`}/>
             </div>
             <div className="sunset_div">
                <div className="sunrise">

@@ -2,12 +2,14 @@ import React, { FC } from "react"
 import "./MainWeather.scss"
 import { PropsData } from "../../types/GetWeatherData"
 import Rain from "../../img/icons/Rain.svg";
-// import { ReactComponent as Icon } from `../../img/icons/${data?.list[0].weather[0].main}.svg`
+
+
 
 
 const MainWeather:FC<PropsData> = ({data, dateNow}) => {
+   
+   // const Image = require(`../../img/${data?.list[0].weather[0].main}.svg`)
 
-// import  Icon from `../../img/icons/${data?.list[0].weather[0].main}.svg`
 
 
    return(
@@ -44,9 +46,7 @@ const MainWeather:FC<PropsData> = ({data, dateNow}) => {
                </div>
             </div>
          <div className="weathet_icon">
-            {/* <img src={`../../img/icons/${data?.list[0].weather[0].main}.svg`} /> */}
-            <img className="icon" src={Rain}/>
-            {/* <Icon className="icon"/> */}
+            <img className="icon" src={`https://openweathermap.org/img/wn/${data?.list[0].weather[0].icon}@2x.png`}/>
          </div>
          </div> 
       </div>

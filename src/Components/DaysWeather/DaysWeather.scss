@@ -1,0 +1,52 @@
+.day_card{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 15px 15px 30px 15px;
+      // border: 1px solid;
+      width: 17%;
+      border-radius: 10px;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+      .day{
+         font-family: Verdana, Geneva, Tahoma, sans-serif;
+         color: black;
+         font-size: 20px;
+         margin: 10px 0;
+         font-weight: 500;
+      }
+      .day_time{
+         color: black;
+         font-size: 15px;
+         margin: 5px 0;
+         font-weight: 300;
+      }
+      .temperature{
+         display: flex;
+         .temp{
+            font-size: 30px;
+            margin: 15px 2px 5px 2px;
+         }
+         .temp_o{
+            font-size: 12px;
+            margin: 15px 0 0 6px;
+         }
+         .temp_C{
+            font-size: 18px;
+            margin: 18px 0 0 2px;
+         }
+      }
+      .min_temperature{
+         font-size: 17px;
+         margin-bottom: 10px ;
+      }
+      .img_div{
+         width: 40%;
+         .svg{
+            width: 70px;
+         }
+      }
+      .rain_percent{
+         font-size: 17px;
+         margin: 15px 0;
+      }
+   }
