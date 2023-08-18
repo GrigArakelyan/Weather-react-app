@@ -1,16 +1,11 @@
 import React, { FC } from "react"
 import "./MainWeather.scss"
 import { PropsData } from "../../types/GetWeatherData"
-import Rain from "../../img/icons/Rain.svg";
 
 
 
 
 const MainWeather:FC<PropsData> = ({data, dateNow}) => {
-   
-   // const Image = require(`../../img/${data?.list[0].weather[0].main}.svg`)
-
-
 
    return(
       <div key={data?.city.id} className="weather_card">

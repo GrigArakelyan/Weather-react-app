@@ -1,6 +1,6 @@
 import React, {FC, useState} from "react";
 import "./DailyForecast.scss"
-import { GetWeatherData, PropsData } from "../../types/GetWeatherData";
+import { PropsData } from "../../types/GetWeatherData";
 import ArrowLeftIcon  from "../../img/arrowLeftIcon.png";
 import ArrowRightIcon  from "../../img/arrowRightIcon.png";
 import { addZero } from "../../helpers/functions";
@@ -9,20 +9,18 @@ const DailyForecast:FC<PropsData> = ({data}) => {
 
    const [sliceN, setSliceN] = useState(0);
    const [sliceM, setSliceM] = useState(5);
-   const [daysData, setDaysData] = useState(data?.list.slice(sliceN, sliceM))
+   const daysData = data?.list.slice(sliceN, sliceM)
 
    const right = () => {
-      if(data && sliceN <= data.list.length - 5 && sliceM <= data.list.length){
+      if(data && sliceN < data.list.length - 5 && sliceM < data.list.length){
          setSliceN(sliceN + 5);
          setSliceM(sliceM + 5);
-         setDaysData(data?.list.slice(sliceN, sliceM))
       } 
    }
    const left = () => {
-      if(data && sliceN >= 0 && sliceM >= 5){
+      if(data && sliceN > 0 && sliceM > 5){
          setSliceN(sliceN - 5);
          setSliceM(sliceM - 5);
-         setDaysData(data?.list.slice(sliceN, sliceM))
       } 
    }
  

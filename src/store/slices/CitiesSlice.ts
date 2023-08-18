@@ -1,16 +1,33 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { CitiesInitialState } from "./CitiesInitialState";
+import { fetchCities } from "./CitiesThunk";
 
 const CitiesSlice = createSlice({
    name: "Cities",
    initialState:CitiesInitialState,
    reducers:{
-      addCityData: (state, {payload}) => {
-         state.data = payload
-      }
+      // addCityData: (state, {payload}) => {
+      //    state.data = payload
+      // }
    },
-   extraReducers:{}
+   extraReducers: (builder) => {
+      builder
+      .addCase(fetchCities.pending, (state) => {
+         state.error = "";
+         state.loading = true;
+      })
+      .addCase(fetchCities.fulfilled, (state, {payload}) => {
+         state.loading = false;
+         state.error = "";
+         console.log(payload, "action")
+         state.data =  payload
+      })
+      .addCase(fetchCities.rejected, (state, {payload}) => {
+         state.loading = false;
+         state.error = payload
+      })
+   }
 });
 
 export default CitiesSlice.reducer
-export const { addCityData } = CitiesSlice.actions
+// export const { addCityData } = CitiesSlice.actions
