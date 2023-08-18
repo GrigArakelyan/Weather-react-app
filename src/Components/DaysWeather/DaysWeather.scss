@@ -1,9 +1,12 @@
-.day_card{
+.days_card{
+   display: flex;
+   margin: 20px;
+   justify-content: space-between;
+   .day_card{
       display: flex;
       flex-direction: column;
       align-items: center;
       margin: 15px 15px 30px 15px;
-      // border: 1px solid;
       width: 17%;
       border-radius: 10px;
       box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
@@ -50,3 +53,28 @@
          margin: 15px 0;
       }
    }
+}
+
+
+
+   @media screen and (max-width: 850px){
+      .days_card{
+         flex-wrap: wrap;
+         .day_card{
+            width: 40%;
+         }
+      }
+   }
+
+   @media screen and (max-width: 575px){
+      .days_card{
+         flex-direction: column;
+         justify-content: center;
+         margin: 20px;
+         .day_card{
+            margin:  5%;
+            width: 90% !important;
+         }
+      }
+   }
+   

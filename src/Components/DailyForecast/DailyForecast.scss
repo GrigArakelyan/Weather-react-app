@@ -7,69 +7,102 @@
       font-size: 25px;
       padding: 15px 20px;
    }
-   .days_card{ 
-      margin: 20px;
-      margin-left: 5px;
+   .flex_div{
       display: flex;
-      justify-content: space-between;
       align-items: center;
       .arrow_div{
          margin: 0 5px;
+         height: 100%;
          .arrow_icon{
             width: 25px;
+            margin: 105px 0;
             padding: 5px;
          }
       }
-      .day_card{
+      .days_card{ 
+         margin: 20px;
          display: flex;
-         flex-direction: column;
+         justify-content: space-between;
          align-items: center;
-         margin: 15px 15px 30px 15px;
-         width: 17%;
-         border-radius: 10px;
-         box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
-         .day{
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: black;
-            font-size: 17px;
-            margin: 10px 5px;
-            padding: 5px;
-            font-weight: 500;
-         }
-         .day_time{
-            color: black;
-            font-size: 15px;
-            margin: 5px 0;
-            font-weight: 300;
-         }
-         .temperature{
+         .day_card{
             display: flex;
-            .temp{
-               font-size: 30px;
-               margin: 15px 2px 5px 2px;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px 15px 30px 15px;
+            width: 17%;
+            border-radius: 10px;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+            .day{
+               font-family: Verdana, Geneva, Tahoma, sans-serif;
+               color: black;
+               font-size: 17px;
+               margin: 10px 5px;
+               padding: 5px;
+               font-weight: 500;
             }
-            .temp_o{
-               font-size: 12px;
-               margin: 15px 0 0 6px;
+            .day_time{
+               color: black;
+               font-size: 15px;
+               margin: 5px 0;
+               font-weight: 300;
             }
-            .temp_C{
-               font-size: 18px;
-               margin: 18px 0 0 2px;
+            .temperature{
+               display: flex;
+               .temp{
+                  font-size: 30px;
+                  margin: 15px 2px 5px 2px;
+               }
+               .temp_o{
+                  font-size: 12px;
+                  margin: 15px 0 0 6px;
+               }
+               .temp_C{
+                  font-size: 18px;
+                  margin: 18px 0 0 2px;
+               }
+            }
+            .min_temperature{
+               font-size: 17px;
+               margin-bottom: 10px ;
+            }
+            .img_div{
+               width: 40%;
+               .svg{
+                  width: 70px;
+               }
+            }
+            .rain_percent{
+               font-size: 17px;
+               margin: 15px 0;
             }
          }
-         .min_temperature{
-            font-size: 17px;
-            margin-bottom: 10px ;
-         }
-         .img_div{
-            width: 40%;
-            .svg{
-               width: 70px;
-            }
-         }
-         .rain_percent{
-            font-size: 17px;
-            margin: 15px 0;
+      }
+   }
+   
+}
+
+@media screen and (max-width: 850px){
+   .days_card{
+      flex-wrap: wrap;
+      .day_card{
+         width: 40% !important;
+      }
+   }
+}
+
+@media screen and (max-width: 575px){
+   .flex_div{
+      justify-content: space-between;
+      .arrow_div{
+         height: 100%;
+      }
+      .days_card{
+         flex-direction: column;
+         margin: 20px 10px !important;
+         width: 90% ;
+         .day_card{
+            width: 100%;
+            margin: 2% 0 !important;
          }
       }
    }

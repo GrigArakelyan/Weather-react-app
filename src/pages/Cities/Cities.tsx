@@ -22,12 +22,9 @@ const Cities:FC = () => {
    const {name} = useParams();
    const dispatch = useAppDispatch();
 
-   // const latQuary = searchparams.get("lat") || "";
-   // const lonQuary = searchparams.get("lon") || "";
 
    useEffect(() => {
       CitiesConfig.filter((city) => {
-         console.log((name)?.toLowerCase())
          if((city.name).toLowerCase() === (name)?.toLowerCase()){
             dispatch(fetchCities(city))
             setSearchParams({name: city.name, lat: city.lat, lon: city.lon})
@@ -39,8 +36,6 @@ const Cities:FC = () => {
    }, [name]);
    
    const dateNow = addZero(new Date().getHours()) + ":" + addZero(new Date().getMinutes());
-
-   console.log(data, "data") //////// console.log
 
    return (
       <div key={data?.city.id} className="cities_Weather">

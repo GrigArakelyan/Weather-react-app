@@ -1,7 +1,6 @@
 import React, { FC } from "react"
 import "./DaysWeather.scss"
 import { DayWeatherData } from "../../types/GetWeatherData"
-import { ReactComponent as Logo } from "../../img/icons/bizzard.svg";
 
 
 type PropDays = {

@@ -6,13 +6,13 @@ import { addZero } from "../../helpers/functions";
 const DaysWeatherCard:FC<PropsData> = ({data}) => {
 
    const timezon = data&& data?.city.timezone / 3600;
-const msToTime = (duration: number | undefined) => {
-   if(duration && timezon){
-      let minutes = Math.floor((duration / (1000 / 60)) % 60),
-         hours = Math.floor((duration / (1000 / 60 / 60)) % 24);
-      return addZero(hours) + ":" + addZero(minutes);
+   const msToTime = (duration: number | undefined) => {
+      if(duration && timezon){
+         let minutes = Math.floor((duration / (1000 / 60)) % 60),
+            hours = Math.floor((duration / (1000 / 60 / 60)) % 24);
+         return addZero(hours) + ":" + addZero(minutes);
+      }
    }
- }
 
    return (
       <>

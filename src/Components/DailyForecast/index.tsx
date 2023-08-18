@@ -27,12 +27,11 @@ const DailyForecast:FC<PropsData> = ({data}) => {
    return (
       <div key={data?.city.id} className="DailyForecast">
          <h3 className="h3_title">Hourly Forecast</h3>
+         <div className="flex_div">
+         <div className="arrow_div" onClick={left}>
+            <img className="arrow_icon" src={ArrowLeftIcon} />
+         </div>
          <div className="days_card">
-            <div className="arrow_div"
-               onClick={left}
-            >
-               <img className="arrow_icon" src={ArrowLeftIcon} />
-            </div>
             {daysData?.map((day, index) => 
                <div key={index} className="day_card">
                <div className="day">
@@ -56,11 +55,10 @@ const DailyForecast:FC<PropsData> = ({data}) => {
                </div>
             </div>
             )}
-            <div className="arrow_div"
-               onClick={right}
-            >
-               <img className="arrow_icon" src={ArrowRightIcon} />
-            </div>
+         </div>
+         <div className="arrow_div" onClick={right}>
+            <img className="arrow_icon" src={ArrowRightIcon} />
+         </div>
          </div>
       </div>
    )
