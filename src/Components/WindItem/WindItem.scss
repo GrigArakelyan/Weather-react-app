@@ -40,9 +40,15 @@
    .weather_items{
       margin: 10px;
       .wind_item{
-         width: 92% !important;
-         padding: 5px;
-         margin: 5px 10px !important;
+         width: 100% !important;
+         padding: 5px 0 !important;
+         margin: 5px 0 !important;
+         .wind{
+            margin-left: 10px;
+         }
+         .wind_speed_div{
+            margin-right: 10px;
+         }
       }
 
    }

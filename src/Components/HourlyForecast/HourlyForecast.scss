@@ -123,12 +123,37 @@
 }
 
 @media screen and (max-width: 575px){
+   .sunset_div_Img{
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 30px 15px 20px 15px !important;
+      .sunSet_img{
+         padding: 2px;
+         margin: 0 auto;
+      }
+      .sunset_div{
+         display: flex;
+         margin: 0 auto;
+         width: 100%;
+         .sunrise{
+            margin: 0 auto;
+         }
+      }
+   }
    .weather_items{
       margin: 10px;
       .weather_item{
-         width: 90% !important;
-         padding: 5px;
-         margin: 5px 10px !important;
+         width: 100% !important;
+         padding: 5px 0 !important;
+         margin: 5px 0 !important;
+         .temp_max_min{
+            margin-left: 10px;
+         }
+         .temp{
+            margin-right: 10px;
+         }
       }
 
    }
