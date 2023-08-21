@@ -13,6 +13,7 @@ const App:FC = () => {
     <div className="App">
       <Routes>
         <Route path="/" element={<PublicLayout />}>
+          {/* <Route index element={<Erevan/>}/> */}
           <Route path="/:name" element={<Cities />}/>
         </Route>
       </Routes>

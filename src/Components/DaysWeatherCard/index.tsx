@@ -10,9 +10,9 @@ const DaysWeatherCard:FC<PropsData> = ({data}) => {
    const sunRise = moment.duration(data?.city.sunrise).add(timezon, "hours")
    const sunSet = moment.duration(data?.city.sunset).add(timezon, "hours")
 
-   console.log(sunRise)
-   console.log(sunSet)
-   console.log(data);
+   // console.log(sunRise)
+   // console.log(sunSet)
+   // console.log(data);
 
    return (
       <>

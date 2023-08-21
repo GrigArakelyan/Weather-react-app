@@ -1,11 +1,17 @@
-import React, { FC } from "react"
-import { Outlet } from "react-router"
+import React, { FC, useEffect } from "react"
+import { Outlet, useNavigate } from "react-router"
 import "./layout.scss"
 import { NavLink } from "react-router-dom";
 
 const PublicLayout:FC = () => {
    const cities = ["London", "Tokyo", "Paris", "Berlin", "NewYork"];
    const classActive: (isActive: any) => string = ({isActive}) => isActive ? "active" : "h4_city" 
+   const navigate = useNavigate();
+
+   useEffect(() => {
+      navigate(cities[0])
+   }, []);
+
    return (
       <>
          <header className="header">           
