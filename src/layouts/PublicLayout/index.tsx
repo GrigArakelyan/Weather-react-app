@@ -31,7 +31,6 @@ const PublicLayout:FC = () => {
          <div className="container">
             <Outlet />
          </div>
-         <footer className="footer"></footer>
       </>
    )
    

@@ -1,7 +1,6 @@
 import React, { FC } from "react"
 import { PropsData } from "../../types/GetWeatherData"
 import { ReactComponent as Sun } from "../../img/icons/suny.svg";
-import { addZero } from "../../helpers/functions";
 import moment from "moment"
 
 const DaysWeatherCard:FC<PropsData> = ({data}) => {
@@ -9,9 +8,6 @@ const DaysWeatherCard:FC<PropsData> = ({data}) => {
    const timezon = data&& data?.city.timezone / 3600;
    const sunRise = moment().set("millisecond", data?.city.sunrise).format("HH:mm").toString();
    const sunSet = moment().set("millisecond",data?.city.sunrise + data?.city.sunset).format("HH:mm").toString();
-
-   // console.log(sunRise, 'sunrise')
-   // console.log(sunSet, 'sunrise')
 
    return (
       <>

@@ -20,7 +20,7 @@ export const InitialStateData =  {
          all: 0,
       },
       dt: 0,
-      dt_txt: new Date(),
+      dt_txt: 0,
       main:{
          feels_like: 0,
          grnd_level: 0,

@@ -18,7 +18,7 @@ export interface GetWeatherData {
    list: {
       clouds: {all: number};
       dt: number;
-      dt_txt: Date;
+      dt_txt: number;
       main:{
          feels_like: number;
          grnd_level: number;
@@ -60,7 +60,7 @@ export interface DayWeatherData {
       all: number
    };
    dt: number;
-   dt_txt: Date;
+   dt_txt: number;
    main:{
       feels_like: number;
       grnd_level: number;

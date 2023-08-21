@@ -4,8 +4,6 @@ import { PropsData } from "../../types/GetWeatherData"
 import moment from "moment"
 
 
-
-
 const MainWeather:FC<PropsData> = ({data}) => {
 
    return(
@@ -42,7 +40,7 @@ const MainWeather:FC<PropsData> = ({data}) => {
                </div>
             </div>
          <div className="weathet_icon">
-            <img className="icon" src={`https://openweathermap.org/img/wn/${data?.list[0].weather[0].icon}@2x.png`}/>
+            {data && <img className="icon" src={`https://openweathermap.org/img/wn/${data?.list[0].weather[0].icon}@2x.png`}/>}
          </div>
          </div> 
       </div>
