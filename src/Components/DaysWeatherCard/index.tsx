@@ -7,8 +7,8 @@ import moment from "moment"
 const DaysWeatherCard:FC<PropsData> = ({data}) => {
 
    const timezon = data&& data?.city.timezone / 3600;
-   const sunRise = moment.duration(data?.city.sunrise)
-   const sunSet = moment.duration(data?.city.sunset)
+   const sunRise = moment.duration(data?.city.sunrise).add(timezon, "hours")
+   const sunSet = moment.duration(data?.city.sunset).add(timezon, "hours")
 
    console.log(sunRise)
    console.log(sunSet)
