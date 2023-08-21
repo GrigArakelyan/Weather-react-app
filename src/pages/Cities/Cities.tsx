@@ -9,7 +9,6 @@ import MainWeather from "../../Components/MainWeather/Index";
 import HourlyForecast from "../../Components/HourlyForecast";
 import DailyForecast from "../../Components/DailyForecast";
 import DaysWeather from "../../Components/DaysWeather";
-import { addZero } from "../../helpers/functions";
 import Loading from "../../GlobalComponents/Loading/Loading";
 import { fetchCities } from "../../store/slices/CitiesThunk";
 import { useAppSelector } from "../../hook/useAppSelector";
@@ -35,7 +34,6 @@ const Cities:FC = () => {
          }
    }, [name]);
    
-   const dateNow = addZero(new Date().getHours()) + ":" + addZero(new Date().getMinutes());
 
    return (
       <div key={data?.city.id} className="cities_Weather">
@@ -45,10 +43,10 @@ const Cities:FC = () => {
             <div className="req_error_div">
                <p className="req_error">{`Error ! ${error}`}</p>
             </div>  : 
+         data &&
          <> 
             <MainWeather 
-               data={data}
-               dateNow={dateNow}/>
+               data={data}/>
             <HourlyForecast 
                data={data}/>
             <DailyForecast 

@@ -40,13 +40,23 @@
    color: white;
 }
 .container{
-   width: 80%;
+   width: 85%;
    margin: 0 auto;
    padding: 0 10px;
 }
 
-@media screen and (max-width: 575px){
+@media screen and (max-width: 1030px){
+   .container{
+      width: 88%;
+   }
+}
+@media screen and (max-width: 850px){
    .container{
       width: 90%;
+   }
+}
+@media screen and (max-width: 575px){
+   .container{
+      width: 92%;
    }
 }

@@ -3,46 +3,46 @@ import "./DailyForecast.scss"
 import { PropsData } from "../../types/GetWeatherData";
 import ArrowLeftIcon  from "../../img/arrowLeftIcon.png";
 import ArrowRightIcon  from "../../img/arrowRightIcon.png";
-import { addZero } from "../../helpers/functions";
+import moment from "moment";
 
 const DailyForecast:FC<PropsData> = ({data}) => {
 
    const [sliceN, setSliceN] = useState(0);
    const [sliceM, setSliceM] = useState(5);
-   const daysData = data?.list.slice(sliceN, sliceM)
+   const daysData = data.list.slice(sliceN, sliceM)
 
    const right = () => {
-      if(data && sliceN < data.list.length - 5 && sliceM < data.list.length){
+      if(sliceN < data.list.length - 5 && sliceM < data.list.length){
          setSliceN(sliceN + 5);
          setSliceM(sliceM + 5);
       } 
    }
    const left = () => {
-      if(data && sliceN > 0 && sliceM > 5){
+      if(sliceN > 0 && sliceM > 5){
          setSliceN(sliceN - 5);
          setSliceM(sliceM - 5);
       } 
    }
  
    return (
-      <div key={data?.city.id} className="DailyForecast">
+      <div key={data.city.id} className="DailyForecast">
          <h3 className="h3_title">Hourly Forecast</h3>
          <div className="flex_div">
          <div className="arrow_div" onClick={left}>
             <img className="arrow_icon" src={ArrowLeftIcon} />
          </div>
          <div className="days_card">
-            {daysData?.map((day, index) => 
+            {daysData.map((day, index) => 
                <div key={index} className="day_card">
                <div className="day">
-                  {new Date(day.dt_txt).toDateString()}
+                  {moment(day.dt_txt).format("DD.MM.YYYY")}
                </div>
                <div className="day_time">
-                  {addZero(new Date(day.dt_txt).getHours()) + ":" + addZero(new Date(day.dt_txt).getMinutes())}
+                  {moment(day.dt_txt).format("HH:mm")}
                </div>
                <div className="temperature">
                   <p className="temp">
-                     {Math.floor(day?.main.temp - 273.15)}
+                     {Math.floor(day.main.temp - 273.15)}
                   </p>
                   <p className="temp_o">o</p>
                   <p className="temp_C">C</p>

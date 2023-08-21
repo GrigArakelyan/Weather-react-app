@@ -11,6 +11,7 @@
    .wind{
       display: flex;
       align-items: center;
+      margin-left: 15px;
       .icon_div{
          width: 30px;
          .icon{
@@ -23,6 +24,7 @@
    }
    .wind_speed_div{
       display: flex;
+      margin-right: 15px;
       .wind_speed{
          font-size: 16px;
          margin: 0 10px;
@@ -32,7 +34,22 @@
 
 @media screen and (max-width: 1350px){
    .wind_item{
-      width: 93% !important;
+      width: 100% !important;
+      padding: 5px 0 !important;
+      margin: 5px auto !important;
+      .wind{
+         margin-left: 15px;
+      }
+      .wind_speed_div{
+         margin-right: 15px;
+      }
+   }
+}
+@media screen and (max-width: 1030px){
+   .wind_item{
+      width: 100% !important;
+      padding: 5px 0 !important;
+      margin: 5px auto !important;
    }
 }
 

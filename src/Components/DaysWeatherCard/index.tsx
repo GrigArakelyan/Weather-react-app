@@ -7,12 +7,11 @@ import moment from "moment"
 const DaysWeatherCard:FC<PropsData> = ({data}) => {
 
    const timezon = data&& data?.city.timezone / 3600;
-   const sunRise = moment.duration(data?.city.sunrise).add(timezon, "hours")
-   const sunSet = moment.duration(data?.city.sunset).add(timezon, "hours")
+   const sunRise = moment().set("millisecond", data?.city.sunrise).format("HH:mm").toString();
+   const sunSet = moment().set("millisecond",data?.city.sunrise + data?.city.sunset).format("HH:mm").toString();
 
-   // console.log(sunRise)
-   // console.log(sunSet)
-   // console.log(data);
+   // console.log(sunRise, 'sunrise')
+   // console.log(sunSet, 'sunrise')
 
    return (
       <>
@@ -32,7 +31,7 @@ const DaysWeatherCard:FC<PropsData> = ({data}) => {
             </div>
             <div className="sunset_div">
                <div className="sunrise">
-                  {`${addZero(sunRise.hours())}:${addZero(sunRise.minutes())} - ${addZero(sunSet.hours())}:${addZero(sunSet.minutes())}`}
+                  {sunRise + " - " + sunSet}
                </div>
             </div>
          </div>

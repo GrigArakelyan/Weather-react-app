@@ -1,18 +1,19 @@
 import React, { FC } from "react"
 import "./MainWeather.scss"
 import { PropsData } from "../../types/GetWeatherData"
+import moment from "moment"
 
 
 
 
-const MainWeather:FC<PropsData> = ({data, dateNow}) => {
+const MainWeather:FC<PropsData> = ({data}) => {
 
    return(
       <div key={data?.city.id} className="weather_card">
          <div className="weather_card_title_time">
             <h2 className="h4_title">{data?.city.name}</h2>
             <div className="time">
-               {dateNow}
+               {moment().format("HH:mm").toString()}
             </div>
          </div>
          <div className="weather_item">

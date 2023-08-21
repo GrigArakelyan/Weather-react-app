@@ -85,6 +85,7 @@
          .temp_max_min{
             display: flex;
             align-items: center;
+            margin-left: 15px;
             .icon_div{
                width: 30px;
                .icon{
@@ -97,6 +98,7 @@
          }
          .temp{
             display: flex;
+            margin-right: 15px;
             .temp_min_max{
                display: flex;
                .temperature{
@@ -117,8 +119,21 @@
    .weather_items{
       flex-direction: column;
       .weather_item{
-         width: 93% !important;
+         width: 100% !important;
+         padding: 5px 0 !important;
+         margin: 5px auto !important;
+         .temp_max_min{
+            margin-left: 15px;
+         }
+         .temp{margin-right: 15px;}
       }
+   }
+}
+
+@media screen and (max-width: 1030px){
+   .weather_item{
+      padding: 5px 0 !important;
+      margin: 5px auto !important;
    }
 }
 
