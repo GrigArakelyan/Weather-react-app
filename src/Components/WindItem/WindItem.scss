@@ -36,3 +36,14 @@
    }
 }
 
+@media screen and (max-width: 575px){
+   .weather_items{
+      margin: 10px;
+      .wind_item{
+         width: 92% !important;
+         padding: 5px;
+         margin: 5px 10px !important;
+      }
+
+   }
+}

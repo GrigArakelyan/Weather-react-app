@@ -52,8 +52,8 @@
       .sunset_div_Img{
          display: flex;
          flex-direction: column;
-         margin-bottom: 40px;
-         margin-right: 40px;
+         justify-content: space-between;
+         margin: 35px;
          .sunSet_img{
             padding: 2px;
             margin: 0 auto;
@@ -71,6 +71,7 @@
       margin: 5px 20px;
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
       .weather_item{
          display: flex;
          align-items: center;
@@ -118,5 +119,17 @@
       .weather_item{
          width: 93% !important;
       }
+   }
+}
+
+@media screen and (max-width: 575px){
+   .weather_items{
+      margin: 10px;
+      .weather_item{
+         width: 90% !important;
+         padding: 5px;
+         margin: 5px 10px !important;
+      }
+
    }
 }

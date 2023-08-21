@@ -2,17 +2,17 @@ import React, { FC } from "react"
 import { PropsData } from "../../types/GetWeatherData"
 import { ReactComponent as Sun } from "../../img/icons/suny.svg";
 import { addZero } from "../../helpers/functions";
+import moment from "moment"
 
 const DaysWeatherCard:FC<PropsData> = ({data}) => {
 
    const timezon = data&& data?.city.timezone / 3600;
-   const msToTime = (duration: number | undefined) => {
-      if(duration && timezon){
-         let minutes = Math.floor((duration / (1000 / 60)) % 60),
-            hours = Math.floor((duration / (1000 / 60 / 60)) % 24);
-         return addZero(hours) + ":" + addZero(minutes);
-      }
-   }
+   const sunRise = moment.duration(data?.city.sunrise)
+   const sunSet = moment.duration(data?.city.sunset)
+
+   console.log(sunRise)
+   console.log(sunSet)
+   console.log(data);
 
    return (
       <>
@@ -32,7 +32,7 @@ const DaysWeatherCard:FC<PropsData> = ({data}) => {
             </div>
             <div className="sunset_div">
                <div className="sunrise">
-                  {`${msToTime(data?.city.sunrise)} - ${msToTime(data?.city.sunset)}`}
+                  {`${addZero(sunRise.hours())}:${addZero(sunRise.minutes())} - ${addZero(sunSet.hours())}:${addZero(sunSet.minutes())}`}
                </div>
             </div>
          </div>

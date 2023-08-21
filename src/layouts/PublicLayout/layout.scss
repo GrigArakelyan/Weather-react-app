@@ -44,3 +44,9 @@
    margin: 0 auto;
    padding: 0 10px;
 }
+
+@media screen and (max-width: 575px){
+   .container{
+      width: 90%;
+   }
+}

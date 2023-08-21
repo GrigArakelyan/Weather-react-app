@@ -10,6 +10,7 @@
    .flex_div{
       display: flex;
       align-items: center;
+      justify-content: space-between;
       .arrow_div{
          margin: 0 5px;
          height: 100%;
@@ -24,6 +25,7 @@
          display: flex;
          justify-content: space-between;
          align-items: center;
+         width: 90%;
          .day_card{
             display: flex;
             flex-direction: column;
