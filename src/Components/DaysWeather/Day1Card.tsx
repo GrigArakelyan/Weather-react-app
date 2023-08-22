@@ -12,7 +12,7 @@ const DayCard:FC<PropDays> = ({day, daysName}) => {
 
 
     return ( 
-      <div className="day_card">
+      <div  className="day_card">
       <div className="day">
          {daysName[new Date(day[0]?.dt_txt).getDay()]}
       </div>

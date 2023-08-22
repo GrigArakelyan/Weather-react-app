@@ -38,7 +38,7 @@ const DaysWeather:FC<PropsData> = ({data}) => {
    }) 
 
    return (
-      <div  className="DailyForecast">
+      <div key={data?.city.id}  className="DailyForecast">
       <h3 className="h3_title">5 Days Weather</h3>
       <div className="days_card">
          <DayCard day={day1} daysName={dayNames}/>

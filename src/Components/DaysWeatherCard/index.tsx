@@ -6,8 +6,8 @@ import moment from "moment"
 const DaysWeatherCard:FC<PropsData> = ({data}) => {
 
    const timezon = data&& data?.city.timezone / 3600;
-   const sunRise = moment().set("millisecond", data?.city.sunrise).format("HH:mm").toString();
-   const sunSet = moment().set("millisecond",data?.city.sunrise + data?.city.sunset).format("HH:mm").toString();
+   const sunRise = moment().set("millisecond", data?.city.sunrise).add(timezon, "hours").format("HH:mm").toString();
+   const sunSet = moment().set("millisecond", data?.city.sunrise + data?.city.sunset).add(timezon, "hours").format("HH:mm").toString();
 
    return (
       <>

@@ -7,7 +7,7 @@ const CitiesSlice = createSlice({
    initialState:CitiesInitialState,
    reducers:{
       clearCitiesData: (state, {payload}) => {
-         state.data = payload
+         state.data = payload;
       }
    },
    extraReducers: (builder) => {
@@ -23,7 +23,7 @@ const CitiesSlice = createSlice({
       })
       .addCase(fetchCities.rejected, (state, {payload}) => {
          state.loading = false;
-         state.error = payload
+         state.error = payload;
       })
    }
 });
