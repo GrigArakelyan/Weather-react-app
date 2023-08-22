@@ -139,11 +139,11 @@
 
 @media screen and (max-width: 575px){
    .sunset_div_Img{
-      width: 70%;
+      width: 35% !important;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      margin: 30px 15px 20px 15px !important;
+      margin: 30px 0px 20px 15px !important;
       .sunSet_img{
          padding: 2px;
          margin: 0 auto;
