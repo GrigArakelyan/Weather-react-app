@@ -11,7 +11,7 @@ const MainWeather:FC<PropsData> = ({data}) => {
          <div className="weather_card_title_time">
             <h2 className="h4_title">{data?.city.name}</h2>
             <div className="time">
-               {moment().format("HH:mm").toString()}
+               {moment().format("HH:mm")}
             </div>
          </div>
          <div className="weather_item">

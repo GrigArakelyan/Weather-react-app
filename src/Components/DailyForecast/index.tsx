@@ -9,7 +9,7 @@ const DailyForecast:FC<PropsData> = ({data}) => {
 
    const [sliceN, setSliceN] = useState(0);
    const [sliceM, setSliceM] = useState(5);
-   const daysData = data.list.slice(sliceN, sliceM)
+   const daysData = data.list.slice(sliceN, sliceM);
 
    const right = () => {
       if(sliceN < data.list.length - 5 && sliceM < data.list.length){

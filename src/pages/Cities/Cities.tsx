@@ -17,7 +17,7 @@ import { useSearchParams } from "react-router-dom";
 
 const Cities:FC = () => {
    const {data, loading, error} = useAppSelector(selectCityWeatherData);
-   const [searchparams, setSearchParams] = useSearchParams()
+   const [searchparams, setSearchParams] = useSearchParams();
    const {name} = useParams();
    const dispatch = useAppDispatch();
 
@@ -45,14 +45,10 @@ const Cities:FC = () => {
             </div>  : 
          data &&
          <> 
-            <MainWeather 
-               data={data}/>
-            <HourlyForecast 
-               data={data}/>
-            <DailyForecast 
-               data={data}/>
-            <DaysWeather 
-               data={data}/>
+            <MainWeather data={data}/>
+            <HourlyForecast data={data}/>
+            <DailyForecast data={data}/>
+            <DaysWeather data={data}/>
          </>}
       </div>
    )
