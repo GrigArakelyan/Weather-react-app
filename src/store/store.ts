@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import CitiesSlice from "./slices/CitiesSlice";
+import CitiesSlice from "./slices/citiesSlice";
 
 
 const store = configureStore({

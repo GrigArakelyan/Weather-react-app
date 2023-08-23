@@ -1,4 +1,4 @@
-import { CityConfigType } from "./types/CitiesConfigType";
+import { CityConfigType } from "./types/citiesConfigType";
 
 
 const CitiesConfig:CityConfigType[] = [

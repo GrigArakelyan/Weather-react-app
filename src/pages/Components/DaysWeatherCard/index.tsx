@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import { PropsData } from "../../../types/GetWeatherData"
+import { PropsData } from "../../../types/getWeatherData"
 import { ReactComponent as Sun } from "../../../img/icons/suny.svg";
 import moment from "moment"
 

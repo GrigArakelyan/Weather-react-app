@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import "./DaysWeather.scss"
-import { DayWeatherData } from "../../../types/GetWeatherData"
+import { DayWeatherData } from "../../../types/getWeatherData"
 
 
 type PropDays = {

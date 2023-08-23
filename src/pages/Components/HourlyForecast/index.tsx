@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import {  PropsData } from "../../../types/GetWeatherData"
+import {  PropsData } from "../../../types/getWeatherData"
 import "./HourlyForecast.scss"
 import WindItem from "../WindItem"
 import MinMaxTemp from "../MinMaxTemp"

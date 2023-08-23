@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import  PressureIcon  from "../../../img/icons/fog.svg"
-import { PropsData } from "../../../types/GetWeatherData"
+import { PropsData } from "../../../types/getWeatherData"
 
 const Pressure:FC<PropsData> = ({data}) => {
 

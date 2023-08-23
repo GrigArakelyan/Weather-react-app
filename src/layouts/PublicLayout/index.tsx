@@ -3,9 +3,9 @@ import { Outlet, useNavigate } from "react-router"
 import "./layout.scss"
 import { NavLink } from "react-router-dom";
 import { useAppDispatch } from "../../hook/useAppDispatch";
-import { fetchCitiesThunk } from "../../store/slices/CitiesThunk";
+import { fetchCitiesThunk } from "../../store/slices/citiesThunk";
 import CitiesConfig from "../../config";
-import { CityConfigType } from "../../types/CitiesConfigType";
+import { CityConfigType } from "../../types/citiesConfigType";
 
 const PublicLayout:FC = () => {
    const navigate = useNavigate();

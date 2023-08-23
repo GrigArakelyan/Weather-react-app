@@ -1,13 +1,13 @@
 import  "./Cities.scss"
 import React, {FC, useEffect} from "react"
 import { useAppDispatch } from "../../hook/useAppDispatch";
-import { selectCityWeatherData } from "../../store/selectores/CitiesSelector";
+import { selectCityWeatherData } from "../../store/selectores/citiesSelector";
 import MainWeather from "../Components/MainWeather/Index";
 import HourlyForecast from "../Components/HourlyForecast";
 import DailyForecast from "../Components/DailyForecast";
 import DaysWeather from "../Components/DaysWeather";
 import Loading from "../../Components/Loading/Loading";
-import { fetchCitiesThunk } from "../../store/slices/CitiesThunk";
+import { fetchCitiesThunk } from "../../store/slices/citiesThunk";
 import { useAppSelector } from "../../hook/useAppSelector";
 import { useSearchParams } from "react-router-dom";
 

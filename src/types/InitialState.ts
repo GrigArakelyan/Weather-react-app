@@ -1,4 +1,4 @@
-import { GetWeatherData } from "./GetWeatherData";
+import { GetWeatherData } from "./getWeatherData";
 
 export interface InitialState  {
    data: GetWeatherData;

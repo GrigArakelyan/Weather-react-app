@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { CitiesInitialState } from "./CitiesInitialState";
-import { fetchCitiesThunk } from "./CitiesThunk";
+import { CitiesInitialState } from "./citiesInitialState";
+import { fetchCitiesThunk } from "./citiesThunk";
 
 const CitiesSlice = createSlice({
    name: "Cities",

@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import "./DaysWeather.scss"
-import { DayWeatherData, PropsData } from "../../../types/GetWeatherData";
+import { DayWeatherData, PropsData } from "../../../types/getWeatherData";
 import DayCard from "./Day1Card";
 
 
