@@ -33,8 +33,7 @@ const Cities:FC = () => {
          {error && 
             <div className="req_error_div">
                <p className="req_error">{`Error ! ${error}`}</p>
-            </div>
-         }
+            </div>}
          {!loading && data &&
          <> 
             <MainWeather data={data}/>
