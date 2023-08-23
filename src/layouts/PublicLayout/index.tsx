@@ -5,17 +5,21 @@ import { NavLink } from "react-router-dom";
 import { useAppDispatch } from "../../hook/useAppDispatch";
 import { fetchCitiesThunk } from "../../store/slices/CitiesThunk";
 import CitiesConfig from "../../config";
+import { CityConfigType } from "../../types/CitiesConfigType";
 
 const PublicLayout:FC = () => {
    const navigate = useNavigate();
    const dispatch = useAppDispatch();
 
    useEffect(() => {
-      navigate({pathname:CitiesConfig[0].name,search: `lat=${CitiesConfig[0]?.lat}&lon=${CitiesConfig[0]?.lon}`,})
+      navigate({
+         pathname: CitiesConfig[0].name,
+         search: `lat=${CitiesConfig[0]?.lat}&lon=${CitiesConfig[0]?.lon}`
+      })
    }, []);
 
 
-   const getCitys = (city: any) => () => dispatch(fetchCitiesThunk(city))
+   const getCitys = (city: CityConfigType) => () => dispatch(fetchCitiesThunk(city))
    
 
    return (
@@ -30,8 +34,10 @@ const PublicLayout:FC = () => {
                      <NavLink key={index} to={{
                         pathname: `/${city?.name}`,
                         search: `lat=${city?.lat}&lon=${city?.lon}`,
-                     }} className={({isActive}: {isActive: boolean}) => isActive ? "active" : "h4_city" } onClick={getCitys(city)}>
-                        <h4>{city?.label}</h4>
+                        }} 
+                        className={({isActive}: {isActive: boolean}) => isActive ? "active" : "h4_city" } 
+                        onClick={getCitys(city)}>
+                           <h4>{city?.label}</h4>
                      </NavLink>
                   ))}
                </div>  
