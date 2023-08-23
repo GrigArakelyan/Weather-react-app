@@ -1,6 +1,6 @@
 import React, {FC} from "react"
-import { PropsData } from "../../types/GetWeatherData"
-import HumidityIcon  from "../../img/icons/wet.svg"
+import { PropsData } from "../../../types/GetWeatherData"
+import HumidityIcon  from "../../../img/icons/wet.svg"
 
 
 const Humidity:FC<PropsData> = ({data}) => {

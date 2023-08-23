@@ -1,13 +1,6 @@
-export type CitiesConfigType = {
-   name: string;
-   lat: string;
-   lon: string;
-   API: string;
-}[]
-
 export type CityConfigType = {
    name: string;
+   label: string;
    lat: string;
    lon: string;
-   API: string;
 }

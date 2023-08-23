@@ -4,10 +4,10 @@ import { getCitiesData } from "../../services/getWeather";
 import { CityConfigType } from "../../types/CitiesConfigType";
 
 
-export const fetchCities = createAsyncThunk<GetWeatherData, CityConfigType, {rejectValue: string }>(
-  "Cities/fetchCities",
+export const fetchCitiesThunk = createAsyncThunk<GetWeatherData, {lat: string; lon: string}, {rejectValue: string }>(
+  "Cities/fetchCitiesThunk",
   async (city, { rejectWithValue }) => {
-    return getCitiesData(city.lat, city.lon, city.API)
+    return getCitiesData(city.lat, city.lon)
       .then(({data}) => data )
       .catch((error) => rejectWithValue(error.message));
   }

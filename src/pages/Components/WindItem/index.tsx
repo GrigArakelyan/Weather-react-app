@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import "./WindItem.scss"
-import { PropsData } from "../../types/GetWeatherData"
-import Wind  from "../../img/icons/blowing_sand.svg"
+import { PropsData } from "../../../types/GetWeatherData"
+import Wind  from "../../../img/icons/blowing_sand.svg"
 
 const WindItem:FC<PropsData> = ({data}) => {
 

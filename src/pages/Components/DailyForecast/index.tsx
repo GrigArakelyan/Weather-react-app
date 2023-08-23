@@ -1,8 +1,8 @@
 import React, {FC, useState} from "react";
 import "./DailyForecast.scss"
-import { PropsData } from "../../types/GetWeatherData";
-import ArrowLeftIcon  from "../../img/arrowLeftIcon.png";
-import ArrowRightIcon  from "../../img/arrowRightIcon.png";
+import { PropsData } from "../../../types/GetWeatherData";
+import ArrowLeftIcon  from "../../../img/arrowLeftIcon.png";
+import ArrowRightIcon  from "../../../img/arrowRightIcon.png";
 import moment from "moment";
 
 const DailyForecast:FC<PropsData> = ({data}) => {

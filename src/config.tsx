@@ -1,36 +1,36 @@
-import { CitiesConfigType } from "./types/CitiesConfigType";
+import { CityConfigType } from "./types/CitiesConfigType";
 
 
-const CitiesConfig:CitiesConfigType = [
+const CitiesConfig:CityConfigType[] = [
    {
       name: "london",
+      label: "London",
       lat: "51.509865",
       lon: "-0.118092",
-      API: "d511e704cb5a255e667acb2918f2b07f",
    },
    {
       name: "berlin",
+      label: "Berlin",
       lat: "52.52001",
       lon: "13.40495",
-      API: "d511e704cb5a255e667acb2918f2b07f",
    },
    {
       name: "paris",
+      label: "Paris",
       lat: "48.864716",
-      lon: "2.349014",
-      API: "d511e704cb5a255e667acb2918f2b07f",
+      lon: "2.349014"
    },
    {
       name: "tokyo",
+      label: "Tokyo",
       lat: "35.6895",
-      lon: "139.69171",  
-      API: "d511e704cb5a255e667acb2918f2b07f",
+      lon: "139.69171"
    },
    {
       name: "newyork",
+      label: "Newyork",
       lat: "40.7166638",
-      lon: "-74.0",
-      API: "d511e704cb5a255e667acb2918f2b07f",
+      lon: "-74.0"
    },
 ];
 

@@ -1,6 +1,6 @@
 import React, { FC } from "react"
-import { PropsData } from "../../types/GetWeatherData"
-import  Temp  from "../../img/icons/highTemperature.svg"
+import { PropsData } from "../../../types/GetWeatherData"
+import  Temp  from "../../../img/icons/highTemperature.svg"
 
 const MinMaxTemp:FC<PropsData> = ({data}) => {
 

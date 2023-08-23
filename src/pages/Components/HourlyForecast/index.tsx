@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import {  PropsData } from "../../types/GetWeatherData"
+import {  PropsData } from "../../../types/GetWeatherData"
 import "./HourlyForecast.scss"
 import WindItem from "../WindItem"
 import MinMaxTemp from "../MinMaxTemp"
@@ -8,8 +8,6 @@ import Pressure from "../Pressure"
 import DaysWeatherCard from "../DaysWeatherCard"
 
 const HourlyForecast:FC<PropsData> = ({data}) => {
-
-
    return (
       <div key={data?.city.id} className="Days_weather">
          <div className="days_weather_title">

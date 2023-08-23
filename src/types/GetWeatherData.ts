@@ -51,7 +51,7 @@ export interface PropsData {
    data: GetWeatherData;
    dayData?: DayWeatherData[];
    dateNow?: string;
-   addZero?: any;
+   addZero?: (i: number) => string | number;
 }
 
 
