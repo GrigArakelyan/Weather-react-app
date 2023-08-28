@@ -6,9 +6,6 @@ const CitiesSlice = createSlice({
    name: "Cities",
    initialState:CitiesInitialState,
    reducers:{
-      clearCitiesData: (state, {payload}) => {
-         state.data = payload;
-      }
    },
    extraReducers: (builder) => {
       builder
@@ -29,4 +26,3 @@ const CitiesSlice = createSlice({
 });
 
 export default CitiesSlice.reducer
-export const { clearCitiesData } = CitiesSlice.actions
